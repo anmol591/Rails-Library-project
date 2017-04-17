@@ -1,0 +1,10 @@
+<h1><%= @subject.name %></h1>
+<% if @subject.books.blank? %>
+<p><b>Sorry,There are no books present under this category</b></p>	
+<%else%>
+<ul>
+	<% @subject.books.each do |c| %>
+	<li><%= link_to c.title, :action => "show", :id=>c.id %></li>
+	<%end%>
+</ul>
+<%end%>
